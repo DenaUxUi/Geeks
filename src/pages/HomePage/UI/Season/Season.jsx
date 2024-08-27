@@ -4,8 +4,22 @@ import "./Season.css"
 import "../../../../shared/UI/line.css"
 import Button from './../../../../shared/UI/Button/Button';
 import Card from '../../../../widgets/Card/Card'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 
 function Season() {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        axios("http://192.168.31.250:8000/base/")
+            .then((responce) => {
+                console.log(responce.data);
+                setData(responce.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
     return (
         <div className='season-block'>
             <div className='new-season'>
@@ -14,9 +28,12 @@ function Season() {
                     <div className='line'></div>
                 </div>
                 <div className='cards'>
-                    <Card />
-                    <Card />
-                    <Card />
+                    {
+                        data.map(item => {
+                            return <Card key={item.id} item={item} />
+
+                        })
+                    }
                 </div>
             </div>
             <div className='new-season-img'>
@@ -24,7 +41,7 @@ function Season() {
                     <h3 className='Playfair white title'>НОВАЯ КОЛЛЕКЦИЯ</h3>
                     <div className='line'></div>
                     <Button>КАТАЛОГ</Button>
-                    
+
                 </div>
             </div>
         </div>

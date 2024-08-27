@@ -1,15 +1,18 @@
 import React from 'react'
-import watch from "../../shared/icons/watch.png"
+// import watch from "../../shared/icons/watch.png"
 import "./Card.css"
 
-function Card() {
+
+function Card({item}) {
+    
+    
     return (
         <div className='card'>
             <div className='img-frame'>
-                <img className='img-large' src={watch} alt="часы" />
+                <img className='img-large' src={item.image} alt="часы" />
             </div>
-            <p className='Playfair white first post-title'>Louis XVI ATHOS</p>
-            <p className='Playfair white second post-title'>165 000 руб</p>
+            <p className='Playfair white first post-title'>{item.title}</p>
+            <p className='Playfair white second post-title'>{item.description}</p>
         </div>
     )
 }
