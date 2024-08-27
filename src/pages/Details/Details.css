@@ -1,0 +1,25 @@
+.flex-content-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-content-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.background{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 250px;
+}
+
+.details-image {
+    width: 600px;
+    height: 600px;
+    object-fit: contain;
+}

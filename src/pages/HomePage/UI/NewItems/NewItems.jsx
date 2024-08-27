@@ -6,20 +6,21 @@ import "./NewItems.css"
 import Card from '../../../../widgets/Card/Card'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-
+import Detail from '../../../Details/Detail'
+import { Link } from 'react-router-dom';
 
 function NewItems() {
     const [data, setData] = useState([]);
-    
-    useEffect(()=>{
-        axios("http://192.168.31.250:8000/base/")
-        .then((responce) =>{
-            console.log(responce.data);
-            setData(responce.data);
-        })
-        .catch((error) =>{
-            console.log(error);
-        });
+
+    useEffect(() => {
+        axios("http://192.168.31.142:8000/api/clock/clock/")
+            .then((responce) => {
+                console.log(responce.data);
+                setData(responce.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }, []);
     return (
         <div className='NewItems'>
@@ -30,12 +31,14 @@ function NewItems() {
             <div className='margin'></div>
             <br />
             <div className='cards-catalog'>
-                {
-                    data.map(item =>{
-                        return <Card key={item.id} item={item}/>
-                        
-                    })
-                }
+                <Link to="/Detail" className='PT-sans Link selected-color'>
+                    {
+                        data.map(item => {
+                            return <Card key={item.id} item={item} />
+
+                        })
+                    }
+                </Link>
             </div>
             {/* <div className='cards-catalog'>
                 <Card/>
