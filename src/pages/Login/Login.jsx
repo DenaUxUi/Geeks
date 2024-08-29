@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import Topline from '../../widgets/topline/topline';
+import Header from './../../widgets/header/Header';
+import Footer from '../../widgets/Footer/Footer';
+import ProtectedComponent from './../Login/ProtectedComponent';
+import "./Login.css";
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
@@ -25,29 +31,34 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username:
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-      </label>
-
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-
-      <button type="submit">Login</button>
-    </form>
+    <div>
+      <Topline />
+      <Header />
+      <div className="login-page">
+        <div className="form">
+          <form className="login-form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+            <input
+              type="password"
+              placeholder="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button type="submit">login</button>
+            <p className="message">Not registered? <Link to={"/SignUp"}>Create an account</Link></p>
+            <ProtectedComponent />
+          </form>
+        </div>
+      </div>
+      <Footer />
+    </div>
   );
 };
 

@@ -1,14 +1,17 @@
 import React from 'react'
-import SignUp from '../Login/SignUp'
-import ProtectedComponent from './../Login/ProtectedComponent';
 import Auth from '../Login/Auth';
+import Topline from '../../widgets/topline/topline';
+import Header from './../../widgets/header/Header';
+import Footer from '../../widgets/Footer/Footer';
+
 
 function PersonalPage() {
   return (
     <div>
-      <SignUp />
-      <ProtectedComponent />
+      <Topline />
+      <Header />
       <Auth />
+      <Footer />
     </div>  )
 }
 
