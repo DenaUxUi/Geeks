@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Topline from '../../widgets/topline/topline';
 import Header from '../../widgets/header/Header';
+import Footer from '../../widgets/Footer/Footer';
 import "./SignUp.css"; // Подключаем стили
 
 function SignUp() {
@@ -99,6 +100,7 @@ function SignUp() {
                     <button id='submit' type="submit">Register</button>
                 </form>
             </div>
+            <Footer />
         </div>
     );
 }
