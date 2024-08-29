@@ -6,6 +6,8 @@ import search from '../../shared/icons/gridicons_search.svg';
 import { Link } from 'react-router-dom';
 
 function Header() {
+  const isAuthenticated = !!localStorage.getItem('access');
+
   return (
     <div className='Header'>
       <nav>
@@ -15,7 +17,9 @@ function Header() {
               <Link to="/SecondPage" className='PT-sans Link selected-color'>ПОНРАВИЛОСЬ</Link> 
           </div>
           <ul>
-            <li className='PT-sans func-text'>ЛИЧНЫЙ КАБИНЕТ</li>
+            <Link to={isAuthenticated ? "/PersonalPage" : "/Login"}>
+              <li className='PT-sans func-text'>ЛИЧНЫЙ КАБИНЕТ</li>
+            </Link>
             <li className='PT-sans func-text'>НАСТРОЙКИ</li>
             <li><img className='func-text icon-small' src={cart} alt="корзина" /></li>
             <li><img className='func-text icon-small' src={search} alt="поиск" /></li>

@@ -1,6 +1,7 @@
 import React from 'react'
 import "../../../../app/Fonts/typograhy.css"
 import "./Season.css"
+import "../../../../shared/icons/icon.css"
 import "../../../../shared/UI/line.css"
 import Button from './../../../../shared/UI/Button/Button';
 import Card from '../../../../widgets/Card/Card'
@@ -30,7 +31,7 @@ function Season() {
                 <div className='cards'>
                     {
                         data.map(item => {
-                            return <Card key={item.id} item={item} />
+                            return <Card className="img-large" key={item.id} item={item} />
 
                         })
                     }

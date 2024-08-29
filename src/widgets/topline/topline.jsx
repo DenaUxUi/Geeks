@@ -3,6 +3,7 @@ import eva_phone from '../../shared/icons/eva_phone.png';
 import logIn from '../../shared/icons/ic_sharp-log-in.svg';
 import "./top-line.css";
 import "../../app/Fonts/typograhy.css";
+import { Link } from 'react-router-dom';
 
 function Topline() {
   return (
@@ -13,7 +14,7 @@ function Topline() {
       </div>
       <div className='contact-data'>
         <img src={logIn} alt="login" />
-        <p className='PT-sans optional-text'>Войти / Регистрация</p>
+        <Link to="/Login"><p className='PT-sans optional-text'>Войти / Регистрация</p></Link>
       </div>
     </div>
   );

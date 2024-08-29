@@ -6,7 +6,6 @@ import "./NewItems.css"
 import Card from '../../../../widgets/Card/Card'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import Detail from '../../../Details/Detail'
 import { Link } from 'react-router-dom';
 
 function NewItems() {
