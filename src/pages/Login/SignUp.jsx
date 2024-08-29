@@ -10,6 +10,8 @@ function SignUp() {
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [first_name, setFirst_Name] = useState('');
+    const [date_of_birth, setDate_of_birth] = useState('');
+    const [phone, setPhone] = useState('');
     const [last_name, setLast_Name] = useState('');
     const [password, setPassword] = useState('');
     const [confirm_password, setConfirm_Password] = useState('');
@@ -27,6 +29,8 @@ function SignUp() {
                 username,
                 first_name,
                 last_name,
+                date_of_birth, // Дата уже в формате ГГГГ-ММ-ДД
+                phone,
                 password,
                 confirm_password, 
             });
@@ -71,6 +75,28 @@ function SignUp() {
                             type="text" 
                             value={last_name}
                             onChange={(e) => setLast_Name(e.target.value)}
+                            required
+                        />
+                    </label>
+
+                    <label>
+                        Date:
+                        <input
+                            id='date_of_birth'
+                            type="date"
+                            value={date_of_birth}
+                            onChange={(e) => setDate_of_birth(e.target.value)}
+                            required
+                        />
+                    </label>
+
+                    <label>
+                        Number:
+                        <input
+                            id='nimber'
+                            type="text"
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
                             required
                         />
                     </label>
