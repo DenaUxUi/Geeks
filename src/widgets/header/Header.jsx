@@ -14,14 +14,16 @@ function Header() {
         <Logo />
         <div className='nav-text nav-container'>
           <div className='selected-bg'>
-              <Link to="/SecondPage" className='PT-sans Link selected-color'>ПОНРАВИЛОСЬ</Link> 
+            <Link to="/SecondPage" className='PT-sans Link selected-color'>ПОНРАВИЛОСЬ</Link>
           </div>
           <ul>
             <Link to={isAuthenticated ? "/PersonalPage" : "/Login"}>
               <li className='PT-sans func-text'>ЛИЧНЫЙ КАБИНЕТ</li>
             </Link>
             <li className='PT-sans func-text'>НАСТРОЙКИ</li>
-            <li><img className='func-text icon-small' src={cart} alt="корзина" /></li>
+            <Link to="/Cart">
+              <li><img className='func-text icon-small' src={cart} alt="корзина" /></li>
+            </Link>
             <li><img className='func-text icon-small' src={search} alt="поиск" /></li>
           </ul>
         </div>

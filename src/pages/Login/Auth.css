@@ -5,10 +5,22 @@
     height: 100vh;
     background-color: #f7f7f7;
   }
+  .avatar{
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid black;
+  }
+
+  .user-info{
+    padding: 10px;
+    margin: 20px;
+  }
   
   .welcome-container {
-    text-align: center;
-    padding: 20px;
+    display: flex;
+    padding: 40px;
+    width: 80%;
+    height: 80%;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);

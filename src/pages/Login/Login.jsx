@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Topline from '../../widgets/topline/topline';
 import Header from './../../widgets/header/Header';
 import Footer from '../../widgets/Footer/Footer';
@@ -25,6 +25,7 @@ const Login = ({ onLogin }) => {
       localStorage.setItem('username', username); 
       console.log('Login successful');
       onLogin(); 
+      Navigate("/PersonalPage");
     } catch (error) {
       console.error('Login failed', error);
     }
